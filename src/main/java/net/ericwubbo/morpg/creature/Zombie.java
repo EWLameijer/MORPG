@@ -14,7 +14,7 @@ public class Zombie extends Creature {
     }
 
     public static Zombie create(int number) {
-        if (number == 0 ) return new Zombie();
+        if (number == 0) return new Zombie();
         return new Zombie(species + " " + number);
     }
 

@@ -18,7 +18,7 @@ public class Orc extends Creature {
     }
 
     public Orc(int number) {
-        this(species+ " " + number);
+        this(species + " " + number);
         maxHitPoints = hitPoints;
     }
 
@@ -31,7 +31,8 @@ public class Orc extends Creature {
         return hitPoints <= maxHitPoints * 0.3;
     }
 
-    @Override protected int getDamage() {
+    @Override
+    protected int getDamage() {
         int damage = super.getDamage();
         if (isEnraged()) damage *= 2;
         return damage;
@@ -56,7 +57,8 @@ public class Orc extends Creature {
         return "an " + enragedText + "orc";
     }
 
-    @Override protected void updateStatus(int damage, Being enemy) {
+    @Override
+    protected void updateStatus(int damage, Being enemy) {
         boolean startsEnraged = isEnraged();
         String preEnrageName = getName();
         hitPoints -= damage;

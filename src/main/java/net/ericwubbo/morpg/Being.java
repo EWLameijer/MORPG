@@ -38,7 +38,7 @@ abstract public class Being implements Named {
     }
 
     public void hit(Being enemy) {
-        if (hitPoints <= 0) throw new RuntimeException(getName()  + " is dead!");
+        if (hitPoints <= 0) throw new RuntimeException(getName() + " is dead!");
         int damage = getDamage();
         World.message(getName() + " hits " + enemy.getName() + " with " + getPossessive() + " "
                 + weapon.getName() + " for " + damage + " hit points!");
@@ -47,12 +47,12 @@ abstract public class Being implements Named {
 
     public void getWounded(int damage, Being enemy) {
         updateStatus(damage, enemy);
-        if (hitPoints <= 0)  World.message(getName()  + " dies!");
+        if (hitPoints <= 0) World.message(getName() + " dies!");
     }
 
     protected void updateStatus(int damage, Being enemy) {
         hitPoints -= damage;
-        World.message(getName()  + " gets hit by " + enemy.getName()  + " and drops to " + hitPoints + " hit points!");
+        World.message(getName() + " gets hit by " + enemy.getName() + " and drops to " + hitPoints + " hit points!");
     }
 
     public boolean isAlive() {
